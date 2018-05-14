@@ -148,13 +148,10 @@ export class LoggedInView extends Component {
 
   render() {
     if (this.state.events.length === 0) {
-      // render loading state
       return '...loading??';
     } else {
-      console.log('this.props.events.data: ', this.props.events.data);
-      
-   return (
-      <div className="dashboard grid">
+      return (
+        <div className="dashboard grid">
           <SideBar
             topicBoards={this.state.topicBoards}
             handleInputChange={this.handleInputChange}
@@ -167,7 +164,7 @@ export class LoggedInView extends Component {
             createEventModalOpen={this.state.createEventModalOpen}
             createEventError={this.state.createEventError}
             handleClickEventTitle={this.handleClickEventTitle}
-            events={this.props.posts}
+            events={this.props.events.data}
           />
           <Dashboard 
             events={this.props.events}

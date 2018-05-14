@@ -48,7 +48,7 @@ export default class SideBar extends Component {
   render() {
     const { activeIndex } = this.state;
 
-    if (!this.props.events.data) {
+    if (!this.props.events) {
       return 'loading!!';
     } else {
       return (
@@ -61,7 +61,7 @@ export default class SideBar extends Component {
             createEventModalOpen={this.props.createEventModalOpen}
           />
           <Accordion>
-            {this.props.events.data.map((event, i) => {
+            {this.props.events.map((event, i) => {
               return (
                 <div key={i}>
                   <Accordion.Title active={activeIndex === i} index={i} onClick={this.handleClick}>
